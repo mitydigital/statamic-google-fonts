@@ -2,6 +2,7 @@
 
 namespace MityDigital\StatamicGoogleFonts\Tags;
 
+use Statamic\Facades\Site;
 use Statamic\Tags\Tags;
 
 class Googlefonts extends Tags
@@ -39,7 +40,15 @@ class Googlefonts extends Tags
      */
     protected function _load($expression = 'default')
     {
-        return app(\Spatie\GoogleFonts\GoogleFonts::class)->load($expression)->toHtml();
+        $loaded = app(\Spatie\GoogleFonts\GoogleFonts::class)->load($expression)->toHtml();
+
+        // replace the APP_URL with the site's URL
+        // this is for multi-site support
+        if (Site::hasMultiple()) {
+            $loaded = str_replace('src: url('.config('app.url'), 'src: url('.Site::current()->url(), $loaded);
+        }
+
+        return $loaded;
     }
 
     /**
