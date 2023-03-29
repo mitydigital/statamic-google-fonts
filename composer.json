@@ -1,6 +1,6 @@
 {
     "name": "mitydigital/statamic-google-fonts",
-    "description": "Antlers support for Spatie's Laravel Google Fonts package in Statamic 3.3+.",
+    "description": "Antlers support for Spatie's Laravel Google Fonts package in Statamic 3.3+ and Statamic 4.0+.",
     "license": "MIT",
     "type": "statamic-addon",
     "autoload": {
@@ -21,7 +21,7 @@
     },
     "require": {
         "php": "^8.0",
-        "statamic/cms": "~3.3",
+        "statamic/cms": "~3.3|^4.0",
         "spatie/laravel-google-fonts": "^1.2"
     }
 }
