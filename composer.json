@@ -8,6 +8,11 @@
             "MityDigital\\StatamicGoogleFonts\\": "src"
         }
     },
+    "autoload-dev": {
+        "psr-4": {
+            "MityDigital\\StatamicGoogleFonts\\Tests\\": "tests"
+        }
+    },
     "extra": {
         "statamic": {
             "name": "Statamic Google Fonts",
@@ -23,5 +28,22 @@
         "php": "^8.0",
         "statamic/cms": "~3.3|^4.0",
         "spatie/laravel-google-fonts": "^1.2"
+    },
+    "require-dev": {
+        "pestphp/pest": "^2.8",
+        "orchestra/testbench": "^8.5"
+    },
+    "scripts": {
+        "lint": [
+            "php-cs-fixer fix ./src"
+        ],
+        "test": [
+            "php -d memory_limit=-1 -d max_execution_time=0 ./vendor/bin/pest"
+        ]
+    },
+    "config": {
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
     }
 }
