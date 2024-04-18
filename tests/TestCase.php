@@ -66,6 +66,7 @@ abstract class TestCase extends OrchestraTestCase
         config()->set('google-fonts.inline', true);
         config()->set('google-fonts.fallback', false);
         config()->set('google-fonts.user_agent', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.0.3 Safari/605.1.15');
+        config()->set('google-fonts.preload', false);
 
 
         $app->singleton(GoogleFonts::class, function (Application $app) {
@@ -76,6 +77,7 @@ abstract class TestCase extends OrchestraTestCase
                 fallback: config('google-fonts.fallback'),
                 userAgent: config('google-fonts.user_agent'),
                 fonts: config('google-fonts.fonts'),
+                preload: config('google-fonts.preload'),
             );
         });
 

@@ -20,7 +20,8 @@ beforeEach(function () {
         config('google-fonts.inline'),
         config('google-fonts.fallback'),
         config('google-fonts.user_agent'),
-        config('google-fonts.fonts')
+        config('google-fonts.fonts'),
+        config('google-fonts.preload'),
     ])->makePartial();
 });
 
