@@ -96,7 +96,7 @@ test('it correctly applies full URLs for multisite', function () {
     //
     // configure multi-site
     //
-    Site::setConfig('sites', [
+    Site::setSites([
         'default' => [
             'name' => config('app.name'),
             'locale' => 'en_US',
