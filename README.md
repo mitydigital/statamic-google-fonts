@@ -2,7 +2,8 @@
 
 <!-- statamic:hide -->
 
-![Statamic 3.3+](https://img.shields.io/badge/Statamic-3.3+-FF269E?style=for-the-badge&link=https://statamic.com)
+![Statamic 5.0](https://img.shields.io/badge/Statamic-5.0-FF269E?style=for-the-badge&link=https://statamic.com)
+![Statamic 6.0](https://img.shields.io/badge/Statamic-6.0-FF269E?style=for-the-badge&link=https://statamic.com)
 [![Statamic Google Fonts on Packagist](https://img.shields.io/packagist/v/mitydigital/statamic-google-fonts?style=for-the-badge)](https://packagist.org/packages/mitydigital/statamic-google-fonts/stats)
 
 ---

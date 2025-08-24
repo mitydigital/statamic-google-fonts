@@ -25,8 +25,8 @@
         }
     },
     "require": {
-        "php": "^8.0",
-        "statamic/cms": "^5.0",
+        "php": "^8.2",
+        "statamic/cms": "^5.0|^6.0",
         "spatie/laravel-google-fonts": "^1.2"
     },
     "require-dev": {
@@ -43,7 +43,8 @@
     },
     "config": {
         "allow-plugins": {
-            "pestphp/pest-plugin": true
+            "pestphp/pest-plugin": true,
+            "pixelfear/composer-dist-plugin": true
         }
     },
     "minimum-stability": "dev"
