@@ -46,12 +46,7 @@ class Googlefonts extends Tags
         // replace the APP_URL with the site's URL
         // this is for multi-site support
         if (Site::hasMultiple()) {
-            // add a trailing slash, just in case
-            $appUrl = config('app.url');
-            if (!str_ends_with($appUrl, '/')) {
-                $appUrl .= '/';
-            }
-            $loaded = str_replace('src: url('.$appUrl, 'src: url('.URL::getSiteUrl(), $loaded);
+            $loaded = str_replace('src: url('.config('app.url'), 'src: url('.Site::current()->absoluteUrl(), $loaded);
         }
 
         return $loaded;

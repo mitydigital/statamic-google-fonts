@@ -23,6 +23,7 @@ beforeEach(function () {
         config('google-fonts.fonts'),
         config('google-fonts.preload'),
     ])->makePartial();
+
 });
 
 test('it can load the default font', function () {
@@ -105,13 +106,12 @@ test('it correctly applies full URLs for multisite', function () {
         'multi' => [
             'name' => 'Multi Site',
             'locale' => 'en_AU',
-            'url' => 'https://my-multi-site.com',
+            'url' => 'https://www.my-multi-site.com',
         ]
     ]);
 
-    // set the multi-site URL
-    URL::shouldReceive('getSiteUrl')->andReturn('https://www.my-multi-site.com/');
-    expect(URL::getSiteUrl())->toBe('https://www.my-multi-site.com/');
+    // switch to the other site
+    Site::setCurrent('multi');
 
     // do another call, and should not be localhost, but use the newly set domain
     /*
