@@ -4,6 +4,7 @@ namespace MityDigital\StatamicGoogleFonts\Tags;
 
 use Statamic\Facades\Site;
 use Statamic\Facades\URL;
+use Statamic\Support\Str;
 use Statamic\Tags\Tags;
 
 class Googlefonts extends Tags
@@ -46,7 +47,12 @@ class Googlefonts extends Tags
         // replace the APP_URL with the site's URL
         // this is for multi-site support
         if (Site::hasMultiple()) {
-            $loaded = str_replace('src: url('.config('app.url'), 'src: url('.Site::current()->absoluteUrl(), $loaded);
+            $siteUrl = Site::current()->absoluteUrl();
+            if (Str::startsWith($siteUrl, config('app.url')))
+            {
+                $siteUrl = config('app.url');
+            }
+            $loaded = str_replace('src: url('.config('app.url'), 'src: url('.$siteUrl, $loaded);
         }
 
         return $loaded;
